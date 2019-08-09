@@ -18,8 +18,6 @@
 #define _MJK_STRINGIFY(A)   # A
 #define MJK_STRINGIFY(A)    _MJK_STRINGIFY(A)
 
-#define _MJK_FUNCTION_ALIAS MJK_STRINGIFY(__COUNTER__) "-" __FILE__ ":" MJK_STRINGIFY(__LINE__) "-function"
-
 #pragma mark - Macros define
 
 #define MJK_USED    __attribute__((used))
@@ -52,8 +50,8 @@
 #define MJK_ARRAY_DEFINE(KEY, TYPE, VALUE)      _MJK_DEFINE(KEY, TYPE, MJKRegisterArrayTypeIsArray, VALUE)
 
 // @Private Function export meta macro
-#define __MJK_FUNCTION_EXPORT(DEFINE_METHOD, KEY, SEED)         \
-    MJK_USED static void MJK_IDENTIFIER(SEED)(void);            \
+#define __MJK_FUNCTION_EXPORT(DEFINE_METHOD, KEY, SEED)                    \
+    MJK_USED static void MJK_IDENTIFIER(SEED)(void);                       \
     DEFINE_METHOD(KEY, MJKRegisterTypeFunction, MJK_IDENTIFIER(SEED));     \
     MJK_USED static void MJK_IDENTIFIER(SEED)
 

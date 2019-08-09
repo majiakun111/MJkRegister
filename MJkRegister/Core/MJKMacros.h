@@ -18,21 +18,6 @@
 #define _MJK_STRINGIFY(A)   # A
 #define MJK_STRINGIFY(A)    _MJK_STRINGIFY(A)
 
-#define MJK_DISMISS(A)
-#define MJK_APPLY(A)    A
-
-#define MJK_IF_0(A)     MJK_APPLY
-#define MJK_IF_1(A)     A MJK_DISMISS
-#define MJK_IF(CONDITION)   MJK_CONCAT(MJK_IF_, CONDITION)
-
-#pragma mark - Debug
-
-#if DEBUG || TEST
-#define _MJK_DEBUG 1
-#else
-#define _MJK_DEBUG 0
-#endif
-
 #define _MJK_FUNCTION_ALIAS MJK_STRINGIFY(__COUNTER__) "-" __FILE__ ":" MJK_STRINGIFY(__LINE__) "-function"
 
 #pragma mark - Macros define
@@ -68,8 +53,6 @@
 
 // @Private Function export meta macro
 #define __MJK_FUNCTION_EXPORT(DEFINE_METHOD, KEY, SEED)         \
-    MJK_USED static void MJK_IDENTIFIER(SEED)(void)             \
-    MJK_IF(_MJK_DEBUG)(asm(_MJK_FUNCTION_ALIAS))();       \
     MJK_USED static void MJK_IDENTIFIER(SEED)(void);            \
     DEFINE_METHOD(KEY, MJKRegisterTypeFunction, MJK_IDENTIFIER(SEED));     \
     MJK_USED static void MJK_IDENTIFIER(SEED)

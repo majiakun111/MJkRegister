@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+typedef void(^MJKImageReadingBlock)(const void * _Nullable * _Nullable addr);
 
-typedef void(^MJKImageReadingBlock)(const void **addr);
+NS_ASSUME_NONNULL_BEGIN
 
 @interface MJKImageReader : NSObject
 

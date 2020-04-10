@@ -36,7 +36,7 @@
 
 // @Private Data writer with version marker if needed
 #define _MJK_DATA_DEFINE(HEADER, VALUE)   \
-    __attribute__((used, section(MJK_SEGMENT_SECTION))) static const MJKRegisterData MJK_UNIQUE_IDENTIFIER = (MJKRegisterData){HEADER, VALUE}
+    __attribute__((used, section(MJK_SEGMENT_SECTION))) static const MJKRegisterData MJK_UNIQUE_IDENTIFIER = (MJKRegisterData){HEADER, VALUE} //定义 MJKRegisterData MJK_UNIQUE_IDENTIFIER放到MJK_SEGMENT_SECTION中
 
 // @Private Encoding types
 #define MJK_HEADER_ENCODE(KEY, TYPE, IS_ARRAY) (MJKRegisterDataHeader){_MJK_ASSERT_CSTRING(KEY), TYPE, IS_ARRAY}

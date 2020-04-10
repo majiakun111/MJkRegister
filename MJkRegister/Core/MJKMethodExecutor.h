@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MJKMethodExecutor : NSObject<MJKExecutableProtocol>
 
+// @param cString 方法名字支持类方法且不带参数 +[Test test]
 - (instancetype)initWithCString:(const char *)cString NS_DESIGNATED_INITIALIZER;
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;

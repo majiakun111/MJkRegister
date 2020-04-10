@@ -16,9 +16,9 @@
 
 @implementation ViewController
 
-MJK_STRING_EXPORT("stringKey", "string");
-MJK_STRINGS_EXPORT("stringsKey", "string1");
-MJK_STRINGS_EXPORT("stringsKey", "string2");
+MJK_STRING_EXPORT("stringKey", "mjk");
+MJK_STRINGS_EXPORT("stringsKey", "mrk");
+MJK_STRINGS_EXPORT("stringsKey", "mjx");
 
 MJK_CLASS_EXPORT("class_export_key", ViewController);
 MJK_CLASSES_EXPORT("classes_export_key", ViewController);
